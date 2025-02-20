@@ -12,7 +12,7 @@ services:
       sudo mv chromedriver /usr/local/bin/
       pip install -r requirements.txt
       python manage.py collectstatic --noinput
-    startCommand: gunicorn myproject.wsgi:application
+    startCommand: gunicorn news_scraper.wsgi:application
     envVars:
       - key: DEBUG
         value: False
