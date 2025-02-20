@@ -20,8 +20,8 @@ def scrape_newtimes(query, max_pages=5):
     options.add_argument("--incognito")
     options.add_argument('--disable-gpu')  # Disable GPU usage
     options.binary_location = "/usr/bin/google-chrome"  # Path to Chrome binary
-
-    driver = None
+    driver = webdriver.Chrome(options=options)
+    # driver = None
     results = []
     try:
         print("Setting up ChromeDriver service...")
