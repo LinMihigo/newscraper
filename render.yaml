@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: news_scraper
+    env: python
+    buildCommand: ./render-build.sh && pip install -r requirements.txt
+    startCommand: gunicorn news_scraper.wsgi
