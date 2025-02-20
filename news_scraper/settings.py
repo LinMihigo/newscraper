@@ -25,7 +25,7 @@ DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
-ALLOWED_HOSTS = ['newscraper.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['newscraper-zs3g.onrender.com']
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
