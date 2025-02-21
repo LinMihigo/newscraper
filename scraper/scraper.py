@@ -19,9 +19,17 @@ def scrape_newtimes(query, max_pages=5):
     options.add_argument('--no-sandbox')
     options.add_argument("--incognito")
     options.add_argument('--disable-gpu')  # Disable GPU usage
-    # options.binary_location = "/usr/bin/google-chrome"  # Path to Chrome binary
-
-    driver = None
+    options.binary_location = "/usr/bin/google-chrome"  # Path to Chrome binary
+    # Auto-download & use ChromeDriver
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+# Initialize WebDriver correctly
+    # service = Service("/usr/local/bin/chromedriver")
+    # driver = webdriver.Chrome(service=service, options=options)
+#  Initialize WebDriver with the correct method
+    # service = Service(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(service=service, options=options)
+    # driver = webdriver.Chrome(options=options)
+    # driver = None
     results = []
     try:
         print("Setting up ChromeDriver service...")
